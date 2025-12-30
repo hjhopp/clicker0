@@ -2,7 +2,7 @@
 
 Criteria for success:
 
-- [ ] Clicking a button causes a "Score" number to iterate on the screen
+- [x] Clicking a button causes a "Score" number to iterate on the screen
     - [ ] Particle effects at different score milestones
     - [ ] Clicking audio effect
 - [ ] Clicking a button changes the background of the screen

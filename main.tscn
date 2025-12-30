@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://4uiqcwbhtpcm"]
+[gd_scene load_steps=9 format=3 uid="uid://4uiqcwbhtpcm"]
 
 [ext_resource type="Script" uid="uid://mdia1slqh2i0" path="res://scripts/ScoreButton.cs" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bfh8c3o6inbuh" path="res://scripts/Score.cs" id="2_0xm2m"]
+[ext_resource type="AudioStream" uid="uid://cmxxcmxcon6o" path="res://sounds/score-click.wav" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://blqjgrh3gl7nj" path="res://scripts/AudioManager.cs" id="3_1bvp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
 content_margin_left = 25.0
@@ -88,9 +90,10 @@ theme_override_constants/margin_bottom = 50
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 39
 alignment = 1
 
-[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer" node_paths=PackedStringArray("clickSound")]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_7dm0k")
@@ -99,6 +102,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ig7tw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7dm0k")
 text = "CLICK ME!"
 script = ExtResource("1_ig7tw")
+clickSound = NodePath("../../../AudioManager/ButtonClick")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -117,4 +121,25 @@ horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 66
 script = ExtResource("2_0xm2m")
+
+[node name="AudioManager" type="Node" parent="Control" node_paths=PackedStringArray("ClickSoundPlayers")]
+script = ExtResource("3_1bvp3")
+ClickSoundPlayers = [NodePath("ButtonClick"), NodePath("ButtonClick2"), NodePath("ButtonClick3"), NodePath("ButtonClick4")]
+
+[node name="ButtonClick" type="AudioStreamPlayer2D" parent="Control/AudioManager"]
+position = Vector2(417, 192)
+stream = ExtResource("2_h2yge")
+
+[node name="ButtonClick2" type="AudioStreamPlayer2D" parent="Control/AudioManager"]
+position = Vector2(417, 192)
+stream = ExtResource("2_h2yge")
+
+[node name="ButtonClick3" type="AudioStreamPlayer2D" parent="Control/AudioManager"]
+position = Vector2(417, 192)
+stream = ExtResource("2_h2yge")
+
+[node name="ButtonClick4" type="AudioStreamPlayer2D" parent="Control/AudioManager"]
+position = Vector2(417, 192)
+stream = ExtResource("2_h2yge")
