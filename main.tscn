@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://4uiqcwbhtpcm"]
+[gd_scene load_steps=7 format=3 uid="uid://4uiqcwbhtpcm"]
 
 [ext_resource type="Script" uid="uid://mdia1slqh2i0" path="res://scripts/ScoreButton.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://bfh8c3o6inbuh" path="res://scripts/Score.cs" id="2_0xm2m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
 content_margin_left = 25.0
@@ -99,5 +100,21 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_7dm0k")
 text = "CLICK ME!"
 script = ExtResource("1_ig7tw")
 
-[node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 55
+
+[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.63529414)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = -4
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 11
+theme_override_font_sizes/font_size = 41
+text = "SCORE:"
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("2_0xm2m")

@@ -5,7 +5,7 @@ public partial class GameManager : Node
 {
     public static GameManager Instance { get; private set; }
 
-    public int score { get; private set; }
+    public int Score { get; private set; }
 
     [Signal]
     public delegate void ScoreChangedEventHandler(int newScore);
@@ -18,10 +18,10 @@ public partial class GameManager : Node
 
     public void IncrementScore(int amount)
     {
-        score += amount;
+        Score += amount;
 
-        GD.Print($"The score is {score}");
+        GD.Print($"The score is {Score}");
 
-        EmitSignal(SignalName.ScoreChanged, score);
+        EmitSignal(SignalName.ScoreChanged, Score);
     }
 }
