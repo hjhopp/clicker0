@@ -4,7 +4,7 @@ Criteria for success:
 
 - [x] Clicking a button causes a "Score" number to iterate on the screen
     - [ ] Particle effects at different score milestones
-    - [ ] Clicking audio effect
+    - [x] Clicking audio effect
 - [ ] Clicking a button changes the background of the screen
     - [ ] This background varies from static 2D, to animated 2D, to animated 3D
 - [ ] Clicking a button changes the shader on the button
