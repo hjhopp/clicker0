@@ -93,7 +93,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 39
 alignment = 1
 
-[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer" node_paths=PackedStringArray("clickSound")]
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_7dm0k")
@@ -102,7 +102,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ig7tw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7dm0k")
 text = "CLICK ME!"
 script = ExtResource("1_ig7tw")
-clickSound = NodePath("../../../AudioManager/ButtonClick")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
