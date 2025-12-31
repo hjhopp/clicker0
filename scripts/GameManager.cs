@@ -3,7 +3,7 @@ using System;
 
 public partial class GameManager : Node
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager Instance { get; private set; } = null!;
 
     public int Score { get; private set; }
 

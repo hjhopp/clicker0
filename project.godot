@@ -26,8 +26,17 @@ project/assembly_name="Clicker0"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg", "res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
 
 [gdunit4]
 
 settings/common/update_notification_enabled=false
+templates/testsuite/GDScript="# GdUnit generated TestSuite
+class_name ${suite_class_name}
+extends GdUnitTestSuite
+@warning_ignore('unused_parameter')
+@warning_ignore('return_value_discarded')
+
+# TestSuite generated from
+const __source = '${source_resource_path}'
+"

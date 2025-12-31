@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public partial class AudioManager : Node
 {
-    public static AudioManager Instance { get; private set; }
+    public static AudioManager Instance { get; private set; } = null!;
 
-    [Export] private AudioStreamPlayer2D[] ClickSoundPlayers;
+    [Export] private AudioStreamPlayer2D[] ClickSoundPlayers = [];
 
     private int _nextPlayerIdx = 0;
 
