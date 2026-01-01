@@ -24,10 +24,6 @@ AudioManager="*res://scripts/AudioManager.cs"
 
 project/assembly_name="Clicker0"
 
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/gdUnit4/plugin.cfg")
-
 [gdunit4]
 
 settings/common/update_notification_enabled=false
