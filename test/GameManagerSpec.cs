@@ -3,9 +3,6 @@ using GdUnit4;
 using static GdUnit4.Assertions;
 using System.Threading.Tasks;
 
-#pragma warning disable CS8602 // Dereference of a possibly null reference.
-#pragma warning disable CS8604 // Possible null reference argument.
-
 [TestSuite]
 [RequireGodotRuntime]
 public class GameManagerSpec()
@@ -48,7 +45,9 @@ public class GameManagerSpec()
 
         gameManager.IncrementScore(2);
 
-        await monitor.IsEmitted(nameof(GameManager.ScoreChanged));
+        await monitor
+            .IsEmitted(nameof(GameManager.ScoreChanged))
+            .WithTimeout(TestGlobals.SHORT_TIMEOUT);
     }
 
     [TestCase]
