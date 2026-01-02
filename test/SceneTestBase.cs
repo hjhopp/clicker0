@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 [RequireGodotRuntime]
 public class SceneTestBase()
 {
-    public static async Task SceneTest(Func<Task> test, [CallerMemberName] string testName = "")
+    protected static async Task SceneTest(Func<Task> test, [CallerMemberName] string testName = "")
     {
         try
         {
@@ -27,7 +27,7 @@ public class SceneTestBase()
     {
         var sceneTree = Engine.GetMainLoop() as SceneTree;
 
-        if (sceneTree == null)
+        if (sceneTree == null || !(bool)ProjectSettings.GetSetting("gdunit4/settings/take_screenshots"))
         {
             return;
         }

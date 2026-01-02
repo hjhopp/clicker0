@@ -27,6 +27,7 @@ project/assembly_name="Clicker0"
 [gdunit4]
 
 settings/common/update_notification_enabled=false
+settings/take_screenshots=true
 templates/testsuite/GDScript="# GdUnit generated TestSuite
 class_name ${suite_class_name}
 extends GdUnitTestSuite
@@ -36,3 +37,7 @@ extends GdUnitTestSuite
 # TestSuite generated from
 const __source = '${source_resource_path}'
 "
+
+[property]
+
+gdunit4/settings/take_screenshots="Flag to take screenshots on scene test failures, saved to res://screenshots/"
