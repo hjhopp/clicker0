@@ -93,7 +93,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 39
 alignment = 1
 
-[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="ScoreButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_7dm0k")
