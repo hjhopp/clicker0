@@ -6,7 +6,7 @@ public partial class AudioManager : Node
 {
     public static AudioManager Instance { get; private set; }
 
-    [Export] private AudioStreamPlayer2D[] ClickSoundPlayers;
+    [Export] private AudioStreamPlayer2D[] ClickSoundPlayers = [];
 
     private int _nextPlayerIdx = 0;
 
