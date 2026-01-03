@@ -13,7 +13,7 @@ public class MainSceneSpec() : SceneTestBase
     {
         await SceneTest(async Task () =>
         {
-            var runner = ISceneRunner.Load("res://main.tscn", true);
+            var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
 
             AssertThat(runner).IsNotNull();
         });
@@ -24,7 +24,7 @@ public class MainSceneSpec() : SceneTestBase
     {
         await SceneTest(async Task () =>
         {
-            var runner = ISceneRunner.Load("res://main.tscn", true);
+            var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
 
             var scoreButton = runner.FindChild("ScoreButton");
             var scoreLabel = runner.FindChild("ScoreLabel");
@@ -41,7 +41,7 @@ public class MainSceneSpec() : SceneTestBase
     {
         await SceneTest(async Task () =>
         {
-            var runner = ISceneRunner.Load("res://main.tscn", true);
+            var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
 
             var score = runner.FindChild("Score") as Label;
 
