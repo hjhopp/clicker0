@@ -9,7 +9,7 @@ Criteria for success:
     - [ ] This background varies from static 2D, to animated 2D, to animated 3D
 - [ ] Clicking a button changes the shader on the button
 - [ ] The button is localized and we have a language selector
-- [ ] This game is tested!
+- [x] This game is tested!
 - [ ] Change game icon
 - [ ] Window / Full screen option
 - [ ] Usable with a controller
