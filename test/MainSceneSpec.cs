@@ -54,7 +54,7 @@ public class MainSceneSpec() : SceneTestBase
     {
         await SceneTest(async Task () =>
         {
-            var runner = ISceneRunner.Load("res://main.tscn", true);
+            var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
 
             var scene = runner.Scene().IsNodeReady();
 

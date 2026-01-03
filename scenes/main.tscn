@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://be3rnlt2kv4ac"]
+[gd_scene load_steps=9 format=3 uid="uid://4uiqcwbhtpcm"]
 
 [ext_resource type="Script" uid="uid://mdia1slqh2i0" path="res://scripts/ScoreButton.cs" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bfh8c3o6inbuh" path="res://scripts/Score.cs" id="2_0xm2m"]
