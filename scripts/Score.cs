@@ -11,6 +11,11 @@ public partial class Score : Label
         GameManager.Instance.ScoreChanged += OnScoreChanged;
     }
 
+    public override void _ExitTree()
+    {
+        GameManager.Instance.ScoreChanged -= OnScoreChanged;
+    }
+
     private void OnScoreChanged(int newScore)
     {
         Text = $"{GameManager.Instance.Score}";
