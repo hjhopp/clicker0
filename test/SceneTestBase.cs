@@ -23,6 +23,15 @@ public class SceneTestBase()
         }
     }
 
+    public static async Task Click(ISceneRunner runner)
+    {
+        runner.SimulateMouseButtonPress(MouseButton.Left);
+        await runner.AwaitInputProcessed();
+
+        runner.SimulateMouseButtonRelease(MouseButton.Left);
+        await runner.AwaitInputProcessed();
+    }
+
     private static async Task TakeScreenshot(string testName = "")
     {
         var sceneTree = Engine.GetMainLoop() as SceneTree;

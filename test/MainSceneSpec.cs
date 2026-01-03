@@ -66,11 +66,7 @@ public class MainSceneSpec() : SceneTestBase
 
             runner.SetMousePos(insideButtonPos);
 
-            runner.SimulateMouseButtonPress(MouseButton.Left);
-            await runner.AwaitInputProcessed();
-
-            runner.SimulateMouseButtonRelease(MouseButton.Left);
-            await runner.AwaitInputProcessed();
+            await Click(runner);
 
             AssertThat(score.Text).IsEqual("1");
         });
