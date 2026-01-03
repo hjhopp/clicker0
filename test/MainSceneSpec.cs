@@ -43,7 +43,7 @@ public class MainSceneSpec() : SceneTestBase
         {
             var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
 
-            var score = runner.FindChild("Score") as Label;
+            var score = runner.Scene().FindChild("Score") as Label;
 
             AssertThat(score.Text).IsEqual("0");
         });
@@ -55,18 +55,22 @@ public class MainSceneSpec() : SceneTestBase
         await SceneTest(async Task () =>
         {
             var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
+            var scene = runner.Scene();
 
-            var scene = runner.Scene().IsNodeReady();
+            await runner.SimulateFrames(1);
 
-            var button = runner.FindChild("ScoreButton") as Button;
-            var score = runner.FindChild("Score") as Label;
+            var button = scene.FindChild("ScoreButton") as Button;
+            var score = scene.FindChild("Score") as Label;
 
-            var insideButtonPos = button.Position + (button.Size / 2);
+            var insideButtonPos = button.GlobalPosition + (button.Size / 2);
 
             runner.SetMousePos(insideButtonPos);
-            runner.SimulateMouseButtonPress(MouseButton.Left);
 
-            await runner.SimulateFrames(60);
+            runner.SimulateMouseButtonPress(MouseButton.Left);
+            await runner.AwaitInputProcessed();
+
+            runner.SimulateMouseButtonRelease(MouseButton.Left);
+            await runner.AwaitInputProcessed();
 
             AssertThat(score.Text).IsEqual("1");
         });
