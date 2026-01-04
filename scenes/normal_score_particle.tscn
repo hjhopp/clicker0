@@ -1,0 +1,44 @@
+[gd_scene load_steps=9 format=3 uid="uid://doa8uvngekk3s"]
+
+[ext_resource type="Texture2D" uid="uid://wcorob3n4o0b" path="res://images/spark_particle2.png" id="1_4fp7e"]
+[ext_resource type="Script" uid="uid://c35m4igva83ub" path="res://scripts/NormalScoreParticles.cs" id="2_knc7u"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_knc7u"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_knc7u"]
+colors = PackedColorArray(1, 1, 1, 1, 0.7852611, 0.7852611, 0.7852611, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_272bh"]
+gradient = SubResource("Gradient_knc7u")
+
+[sub_resource type="Curve" id="Curve_xmnob"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.96969694, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kek77"]
+curve = SubResource("Curve_xmnob")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3u3ek"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(50, 50, 1)
+direction = Vector3(0, -1, 0)
+initial_velocity_min = 317.63998
+initial_velocity_max = 488.22998
+gravity = Vector3(0, 500, 0)
+scale_curve = SubResource("CurveTexture_kek77")
+color = Color(1, 0.8392157, 0.4862745, 1)
+color_ramp = SubResource("GradientTexture1D_272bh")
+
+[node name="NormalScoreParticle" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_knc7u")
+emitting = false
+amount = 30
+texture = ExtResource("1_4fp7e")
+lifetime = 0.99
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_3u3ek")
+script = ExtResource("2_knc7u")
