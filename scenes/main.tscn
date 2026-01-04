@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://4uiqcwbhtpcm"]
+[gd_scene load_steps=10 format=3 uid="uid://4uiqcwbhtpcm"]
 
 [ext_resource type="Script" uid="uid://mdia1slqh2i0" path="res://scripts/ScoreButton.cs" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://bfh8c3o6inbuh" path="res://scripts/Score.cs" id="2_0xm2m"]
 [ext_resource type="AudioStream" uid="uid://cmxxcmxcon6o" path="res://sounds/score-click.wav" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://doa8uvngekk3s" path="res://scenes/normal_score_particle.tscn" id="2_tbgi4"]
 [ext_resource type="Script" uid="uid://blqjgrh3gl7nj" path="res://scripts/AudioManager.cs" id="3_1bvp3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
@@ -102,6 +103,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ig7tw")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_7dm0k")
 text = "CLICK ME!"
 script = ExtResource("1_ig7tw")
+
+[node name="NormalScoreParticle" parent="Control/MarginContainer/VBoxContainer/ScoreButton" instance=ExtResource("2_tbgi4")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2

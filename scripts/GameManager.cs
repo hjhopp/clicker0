@@ -20,8 +20,6 @@ public partial class GameManager : Node
     {
         Score += amount;
 
-        GD.Print($"The score is {Score}");
-
         EmitSignal(SignalName.ScoreChanged, Score);
     }
 }

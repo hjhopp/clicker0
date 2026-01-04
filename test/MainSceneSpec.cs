@@ -71,4 +71,27 @@ public class MainSceneSpec() : SceneTestBase
             AssertThat(score.Text).IsEqual("1");
         });
     }
+
+    [TestCase]
+    public async Task ClickingButtonEmitsParticles()
+    {
+        await SceneTest(async Task () =>
+        {
+            var runner = ISceneRunner.Load("res://scenes/main.tscn", true);
+            var scene = runner.Scene();
+
+            await runner.SimulateFrames(1);
+
+            var button = scene.FindChild("ScoreButton") as Button;
+            var sparkle = button.FindChild("NormalScoreParticle") as GpuParticles2D;
+
+            var insideButtonPos = button.GlobalPosition + (button.Size / 2);
+
+            runner.SetMousePos(insideButtonPos);
+
+            await Click(runner);
+
+            AssertThat(sparkle.Emitting).IsTrue();
+        });
+    }
 }
